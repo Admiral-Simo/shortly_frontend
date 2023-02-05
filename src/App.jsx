@@ -6,6 +6,8 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Main from "./components/Main/Main";
 
+// App That helps people shorten their Links
+
 function App() {
   return (
     <div>
