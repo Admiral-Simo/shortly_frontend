@@ -1,4 +1,5 @@
 import React from "react";
+import Benefits from "./components/Benefits/Benefits";
 import CallToAction from "./components/CallToAction/CallToAction";
 import Feature from "./components/Feature/Feature";
 import Footer from "./components/Footer/Footer";
@@ -11,14 +12,15 @@ function App() {
     <div>
       <Header />
       <Hero />
-      <Main />
-      <Feature />
+      <div className="bg-gray-100">
+        <Main />
+        <Feature />
+        <Benefits />
+      </div>
       <CallToAction />
       <Footer />
     </div>
   );
 }
-
-
 
 export default App;
