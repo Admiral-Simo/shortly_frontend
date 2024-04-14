@@ -1,3 +1,2 @@
-
-import LinkItem from './LinkItem';
-export default LinkItem;    
+import LinkItem from "./LinkItem";
+export default LinkItem;
