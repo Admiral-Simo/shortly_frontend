@@ -5,20 +5,18 @@ import Feature from "./components/Feature/Feature";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
-import Main from "./components/Main/Main";
-
+import Shortener from "./components/Shortener";
 
 // App That helps people shorten their Links
 
-
-function App() {
+function Main() {
   return (
     <div>
       <Header />
       <Hero />
 
       <div className="bg-gray-100">
-        <Main />
+        <Shortener />
         <Feature />
         <Benefits />
       </div>
@@ -28,7 +26,4 @@ function App() {
   );
 }
 
-
-
-
-export default App;
+export default Main;

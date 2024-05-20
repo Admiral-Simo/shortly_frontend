@@ -1,7 +1,7 @@
 import React from "react";
 import LinkItem from "../LinkItem/LinkItem";
 
-const Main = () => {
+const Shortener = () => {
   return (
     <section id="main" className="bg-gray-100">
       <div className="container p-3 mx-auto mt-16 mb-9">
@@ -22,4 +22,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Shortener;

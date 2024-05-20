@@ -12,9 +12,12 @@ const Hero = () => {
             Build your brand's recognition and get detailed insights on how your
             links are performing.
           </h3>
-          <button className="m-auto text-2xl text-center w-fit lg:m-0 lg:text-3xl btn lg:text-left">
+          <a
+            href="/signup"
+            className="m-auto text-2xl text-center w-fit lg:m-0 lg:text-3xl btn lg:text-left"
+          >
             Get Started
-          </button>
+          </a>
         </div>
         <div className="flex-1 order-1 w-full px-6 lg:self-start lg:order-2">
           <img src={require("../../images/illustration-working.png")} alt="" />
