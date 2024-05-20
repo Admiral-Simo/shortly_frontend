@@ -6,14 +6,10 @@ const Header = () => {
       {/* Flex Container */}
       <div className="flex items-center justify-between">
         {/* Logo + Features */}
-        <div className="flex items-center space-x-20">
+        <a href="/">
           <Logo />
-          <div className="items-center hidden space-x-8 font-bold text-gray-400 md:flex">
-            <p className="capitalize">Features</p>
-            <p className="capitalize">Pricing</p>
-            <p className="capitalize">Resources</p>
-          </div>
-        </div>
+        </a>
+
         <div className="items-center hidden space-x-5 md:flex">
           <a className="font-bold text-gray-400 capitalize" href="/signin">
             Login
