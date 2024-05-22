@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { FormEvent, useState } from "react";
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     // Handle form submission logic here
     console.log("Email:", email);
