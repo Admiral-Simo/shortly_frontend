@@ -1,6 +1,8 @@
 import LinkItem from "../LinkItem/LinkItem";
+import useGetUrls from "./useGetUrls";
 
 const Shortener = () => {
+  const urls = useGetUrls();
   return (
     <section id="main" className="bg-white">
       <div className="container p-3 mx-auto mt-16 mb-9">
@@ -15,7 +17,9 @@ const Shortener = () => {
       </div>
       {/* Link Items */}
       <div className="max-w-4xl mx-auto space-y-3 mb-3">
-        <LinkItem shortened={"this is the shortened link"} link={"something"} />
+        {urls.map(({ url, id }) => (
+          <LinkItem key={id} shortened={window.location.href + id} link={url} />
+        ))}
       </div>
     </section>
   );
