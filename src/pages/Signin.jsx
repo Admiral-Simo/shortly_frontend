@@ -1,4 +1,3 @@
-import React from "react";
 import useSignIn from "./useSignIn";
 
 function Signin() {
@@ -9,7 +8,7 @@ function Signin() {
     <div className="min-h-screen bg-yellow-500 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
-          Login
+          Sign In
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

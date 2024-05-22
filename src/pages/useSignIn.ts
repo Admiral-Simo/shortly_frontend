@@ -9,8 +9,7 @@ interface SignInData {
 }
 
 interface SignInResponse {
-  user: User; // Define the type of user object received from the server
-  // Add other properties as needed
+  user: User;
 }
 
 const useSignIn = () => {
@@ -23,7 +22,7 @@ const useSignIn = () => {
         "http://localhost:8080/login",
         formData,
         {
-          withCredentials: true, // Ensure cookies are sent with the request
+          withCredentials: true,
         },
       );
 
@@ -32,7 +31,6 @@ const useSignIn = () => {
     {
       onSuccess: (data) => {
         console.log(data?.user);
-        // Handle success scenario here, e.g., redirect to dashboard
       },
     },
   );
