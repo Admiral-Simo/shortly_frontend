@@ -15,7 +15,7 @@ const LinkItem = ({ link, shortened }) => {
     }
   };
   return (
-    <div className="p-7 flex bg-white flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:justify-between">
+    <div className="p-7 shadow-2xl flex bg-white flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:justify-between">
       <h1 className="text-black font-bold md:mb-0">{link}</h1>
       <div className="flex flex-col md:flex-row items-center">
         <p className="font-bold text-cyan">{shortened}</p>

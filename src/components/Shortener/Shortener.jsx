@@ -1,9 +1,8 @@
-import React from "react";
 import LinkItem from "../LinkItem/LinkItem";
 
 const Shortener = () => {
   return (
-    <section id="main" className="bg-gray-100">
+    <section id="main" className="bg-white">
       <div className="container p-3 mx-auto mt-16 mb-9">
         <div className="flex max-w-4xl mx-auto flex-col p-10 space-y-3 md:space-y-0 md:space-x-3 bg-darkViolet md:flex-row rounded-lg">
           <input
@@ -15,7 +14,7 @@ const Shortener = () => {
         </div>
       </div>
       {/* Link Items */}
-      <div className="max-w-4xl mx-auto space-y-3">
+      <div className="max-w-4xl mx-auto space-y-3 mb-3">
         <LinkItem shortened={"this is the shortened link"} link={"something"} />
       </div>
     </section>

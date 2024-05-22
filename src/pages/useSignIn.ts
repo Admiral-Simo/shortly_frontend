@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useMutation } from "react-query";
 import type { User } from "../types";
+import { useNavigate } from "react-router-dom";
 
 interface SignInData {
   username: string;
@@ -15,6 +16,7 @@ interface SignInResponse {
 const useSignIn = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
 
   const signinMutation = useMutation<SignInResponse, unknown, SignInData>(
     async (formData) => {
@@ -31,6 +33,7 @@ const useSignIn = () => {
     {
       onSuccess: (data) => {
         console.log(data?.user);
+        navigate("/", { replace: true });
       },
     },
   );

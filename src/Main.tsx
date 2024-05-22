@@ -5,21 +5,27 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Shortener from "./components/Shortener";
+import { useEffect, useState } from "react";
 
 // App That helps people shorten their Links
 
 function Main() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
-    <div>
-      <Header />
-      <Hero />
+    <div className="flex flex-col min-h-screen">
+      <Header isAuthenticated={isAuthenticated} />
+      {isAuthenticated ? null : <Hero />}
 
-      <div className="bg-gray-100">
+      <div className="flex-grow bg-white">
         <Shortener />
-        <Feature />
-        <Benefits />
+        {isAuthenticated ? null : (
+          <>
+            <Feature />
+            <Benefits />
+          </>
+        )}
       </div>
-      <CallToAction />
+      {!isAuthenticated && <CallToAction />}
       <Footer />
     </div>
   );
