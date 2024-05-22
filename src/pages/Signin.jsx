@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import useSignIn from "./useSignIn";
 
 function Signin() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
+  const { handleSubmit, username, password, setUsername, setPassword, error } =
+    useSignIn();
 
   return (
     <div className="min-h-screen bg-yellow-500 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
-          Sign In
+          Login
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -23,13 +17,13 @@ function Signin() {
               htmlFor="email"
               className="block text-gray-700 text-sm font-bold mb-2"
             >
-              Email
+              Username
             </label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="username"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
               required
             />
@@ -49,6 +43,9 @@ function Signin() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
               required
             />
+            {error ? (
+              <p className="ml-1 mt-3 text-red">email or password incorrect</p>
+            ) : null}
           </div>
           <div className="flex items-center justify-between">
             <button
