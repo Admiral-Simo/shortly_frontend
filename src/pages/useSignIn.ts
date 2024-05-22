@@ -1,9 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useMutation } from "react-query";
-import { redirect } from "react-router-dom";
-import { useUser } from "../contexts/UserContext";
-import { User } from "types";
+import type { User } from "../types";
 
 interface SignInData {
   username: string;
@@ -18,7 +16,6 @@ interface SignInResponse {
 const useSignIn = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const { loginUser } = useUser();
 
   const signinMutation = useMutation<SignInResponse, unknown, SignInData>(
     async (formData) => {
@@ -35,8 +32,6 @@ const useSignIn = () => {
     {
       onSuccess: (data) => {
         console.log(data?.user);
-        loginUser(data?.user);
-        redirect("/");
         // Handle success scenario here, e.g., redirect to dashboard
       },
     },

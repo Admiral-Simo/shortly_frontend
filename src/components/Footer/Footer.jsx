@@ -1,6 +1,3 @@
-import React from "react";
-import { data } from "../../data";
-
 const Footer = () => {
   return (
     <footer className="bg-veryDarkViolet py-16">

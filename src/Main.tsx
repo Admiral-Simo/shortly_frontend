@@ -1,4 +1,3 @@
-import React from "react";
 import Benefits from "./components/Benefits/Benefits";
 import CallToAction from "./components/CallToAction/CallToAction";
 import Feature from "./components/Feature/Feature";
