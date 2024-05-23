@@ -1,13 +1,23 @@
+import axios from "axios";
+
 interface PHeader {
   isAuthenticated: boolean;
 }
 
 const Header = ({ isAuthenticated }: PHeader) => {
-  const handleLogout = () => {
-    // Remove the accessToken cookie
+  const handleLogout = async () => {
+    try {
+      // Make a GET request to logout endpoint
+      await axios.get("http://localhost:8080/logout", {
+        withCredentials: true,
+      });
 
-    // Trigger a page refresh
-    window.location.reload();
+      // Refresh the page after logout
+      window.location.reload();
+    } catch (error) {
+      // Handle error
+      console.error("Logout error:", error);
+    }
   };
 
   return (
