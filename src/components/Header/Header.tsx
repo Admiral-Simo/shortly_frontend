@@ -3,6 +3,13 @@ interface PHeader {
 }
 
 const Header = ({ isAuthenticated }: PHeader) => {
+  const handleLogout = () => {
+    // Remove the accessToken cookie
+
+    // Trigger a page refresh
+    window.location.reload();
+  };
+
   return (
     <nav className="container relative mx-auto p-7">
       {/* Flex Container */}
@@ -12,7 +19,7 @@ const Header = ({ isAuthenticated }: PHeader) => {
           <Logo />
         </a>
 
-        {!isAuthenticated && (
+        {!isAuthenticated ? (
           <div className="items-center space-x-5 md:flex">
             <a className="font-bold text-gray-400 capitalize" href="/signin">
               Login
@@ -21,6 +28,13 @@ const Header = ({ isAuthenticated }: PHeader) => {
               Sign Up
             </a>
           </div>
+        ) : (
+          <button
+            onClick={handleLogout}
+            className="font-bold text-gray-400 capitalize"
+          >
+            Logout
+          </button>
         )}
       </div>
     </nav>
