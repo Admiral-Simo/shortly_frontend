@@ -1,28 +1,36 @@
-import { useState } from "react";
-import LinkItem from "../LinkItem/LinkItem";
+import { FormEvent, useState } from "react";
+import LinkItem from "../LinkItem";
 import useAddUrl from "./useAddUrl";
 import useGetUrls from "./useGetUrls";
 
-function isValidURL(url) {
+const ensureValidURL = (url: string): [boolean, string] => {
   try {
-    new URL(url);
-    return true;
-  } catch (e) {
-    return false;
+    // Try to create a URL object
+    let validatedURL = new URL(url);
+    return [true, validatedURL.href];
+  } catch {
+    // If it fails, try adding 'https://' and then create a URL object
+    try {
+      let validatedURL = new URL("https://" + url);
+      return [true, validatedURL.href];
+    } catch {
+      return [false, url];
+    }
   }
-}
+};
 
 const Shortener = () => {
   const urls = useGetUrls();
   const addUrl = useAddUrl();
   const [urlString, setUrlString] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     // validate the url string
     // addUrl
-    if (isValidURL(urlString)) {
-      await addUrl(urlString);
+    const [valid, finalUrl] = ensureValidURL(urlString);
+    if (valid) {
+      await addUrl(finalUrl);
     } else {
       alert("url is invalid");
     }

@@ -13,11 +13,11 @@ const Header = ({ isAuthenticated }: PHeader) => {
         </a>
 
         {!isAuthenticated && (
-          <div className="items-center hidden space-x-5 md:flex">
+          <div className="items-center space-x-5 md:flex">
             <a className="font-bold text-gray-400 capitalize" href="/signin">
               Login
             </a>
-            <a className="btn" href="/signup">
+            <a className="btn hidden md:flex" href="/signup">
               Sign Up
             </a>
           </div>
