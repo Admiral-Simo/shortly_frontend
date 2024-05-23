@@ -1,15 +1,8 @@
-import { FormEvent, useState } from "react";
+import useSignUp from "./useSignUp";
 
 function Signup() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    // Handle form submission logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
+  const { handleSubmit, username, password, setUsername, setPassword, error } =
+    useSignUp();
 
   return (
     <div className="min-h-screen bg-yellow-500 flex items-center justify-center">
@@ -20,16 +13,16 @@ function Signup() {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
-              htmlFor="email"
+              htmlFor="username"
               className="block text-gray-700 text-sm font-bold mb-2"
             >
-              Email
+              Username
             </label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="username"
+              id="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
               required
             />
@@ -49,13 +42,18 @@ function Signup() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
               required
             />
+            {error ? (
+              <p className="ml-1 mt-3 text-red">
+                something went wrong try again
+              </p>
+            ) : null}
           </div>
           <div className="flex items-center justify-between">
             <button
               type="submit"
               className="bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50"
             >
-              Sign In
+              Sign Un
             </button>
           </div>
         </form>

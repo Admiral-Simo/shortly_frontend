@@ -13,7 +13,7 @@ function Signin() {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
-              htmlFor="email"
+              htmlFor="username"
               className="block text-gray-700 text-sm font-bold mb-2"
             >
               Username
@@ -43,7 +43,9 @@ function Signin() {
               required
             />
             {error ? (
-              <p className="ml-1 mt-3 text-red">email or password incorrect</p>
+              <p className="ml-1 mt-3 text-red">
+                username or password incorrect
+              </p>
             ) : null}
           </div>
           <div className="flex items-center justify-between">
