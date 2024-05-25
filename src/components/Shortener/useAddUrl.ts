@@ -6,7 +6,7 @@ const useAddUrl = () => {
 
   const createUrl = (newUrl: string) => {
     return axios.post(
-      "http://localhost:8080/save",
+      "http://192.168.1.13:8080/save",
       { url: newUrl },
       {
         withCredentials: true, // Include credentials in the request

@@ -9,7 +9,7 @@ function useIsAuthenticated(): boolean {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/check_authentication",
+          "http://192.168.1.13:8080/check_authentication",
           {
             withCredentials: true, // Include credentials in the request
           },

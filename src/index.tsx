@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/:id",
-    element: <RedirectHandler />, // instead of element i want to make a get request to this link localhost:8080/get/:id and send the user the url that will be send by the server
+    element: <RedirectHandler />, // instead of element i want to make a get request to this link 192.168.1.13:8080/get/:id and send the user the url that will be send by the server
   },
 ]);
 

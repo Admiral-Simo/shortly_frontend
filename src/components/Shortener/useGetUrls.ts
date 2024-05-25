@@ -4,7 +4,7 @@ import type { Url } from "../../types";
 
 const useGetUrls = () => {
   const { data } = useQuery<Url[]>("Url", async () => {
-    const response = await axios.get("http://localhost:8080/get", {
+    const response = await axios.get("http://192.168.1.13:8080/get", {
       withCredentials: true, // Include credentials in the request
     });
     return response.data?.urls;

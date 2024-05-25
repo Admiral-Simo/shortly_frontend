@@ -12,7 +12,7 @@ const RedirectHandler = () => {
   useEffect(() => {
     const fetchUrl = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/get/${id}`);
+        const response = await axios.get(`http://192.168.1.13:8080/get/${id}`);
         setUrl(response.data?.url);
       } catch (e) {
         setError("Error fetching URL");

@@ -21,7 +21,7 @@ const useSignUp = () => {
   const signinMutation = useMutation<SignUpResponse, unknown, SignInData>(
     async (formData) => {
       const response = await axios.post<SignUpResponse>(
-        "http://localhost:8080/signup",
+        "http://192.168.1.13:8080/signup",
         formData,
         {
           withCredentials: true,

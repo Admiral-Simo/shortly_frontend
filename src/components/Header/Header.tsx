@@ -8,7 +8,7 @@ const Header = ({ isAuthenticated }: PHeader) => {
   const handleLogout = async () => {
     try {
       // Make a GET request to logout endpoint
-      await axios.get("http://localhost:8080/logout", {
+      await axios.get("http://192.168.1.13:8080/logout", {
         withCredentials: true,
       });
 
